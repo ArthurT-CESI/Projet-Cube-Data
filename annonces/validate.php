@@ -13,7 +13,7 @@
         $change = $manager->executeBulkWrite('dbCube.Annonces', $bulk);
 
         $_SESSION['success'] = "Annonce modifiée"; 
-        header("Location: /index/profil/dashboard/admin/annonces_a_valider.php");     
+        header("Location: /profil/dashboard/admin/annonces_a_valider.php");     
     }
     else{
         echo "Une erreur est survenue, nous n'avons pas pu localiser l'annonce <br>";

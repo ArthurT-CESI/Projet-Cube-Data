@@ -14,7 +14,7 @@
          'Valide' => FALSE,
          'Image' => $_POST["Image"],
          'NbClics' => 0,
-         'Encheres' => $_POST["Encheres"]
+         'Encheres' => (float)$_POST["Encheres"]
         ]);
 
         $change = $manager->executeBulkWrite('dbCube.Annonces', $bulk);

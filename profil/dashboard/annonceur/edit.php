@@ -20,7 +20,7 @@
         $bulk = new MongoDB\Driver\BulkWrite;
         $bulk->update(
             ['_id' => new MongoDB\BSON\ObjectID($_GET['id'])], 
-            ['$set' => ['Nom' => $_POST['Nom'], 'Image' => $_POST['Image'], 'Encheres' => $_POST['Encheres'], 'Theme' => $_POST['btnradio'], 'AgeMini'=>$_POST['pegi'],'Valide'=>false]]
+            ['$set' => ['Nom' => $_POST['Nom'], 'Image' => $_POST['Image'], 'Encheres' => (float)$_POST['Encheres'], 'Theme' => $_POST['btnradio'], 'AgeMini'=>(int)$_POST['pegi'],'Valide'=>false]]
         );
 
         $change = $manager->executeBulkWrite('dbCube.Annonces', $bulk);

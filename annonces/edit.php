@@ -1,7 +1,7 @@
 <?php
     
-    include '../../../config/header.php';
-    include '../../../config/connect.php';
+    include '../config/header.php';
+    include '../config/connect.php';
     
     if (isset($_GET['id'])) {
         $options = [];

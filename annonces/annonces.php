@@ -48,12 +48,12 @@
             foreach ($collections as $collection) {
                 if ($collection->name == "Annonces") {
                     foreach($cursorAnnonces as $document) {
-                        echo '<div class="col-4">';
+                        /*echo '<div class="col-4">';
                         echo '<ul class="list-group">';
                             echo '<li class="list-group-item active">', $document->Nom;
                             echo '<div class="float-right">';
-                                echo "<a href='edit.php?id=".$document->_id."' class='btn btn-warning btn-sm'>Edit.</a>";
-                                echo "<a href='delete.php?id=".$document->_id."' class='btn btn-danger btn-sm'>Suppr.</a>";
+                                echo "<a href='edit.php?id=".$document->_id."' class='btn btn-warning btn-sm col-2'>Editer</a>";
+                                echo "<a href='delete.php?id=".$document->_id."' class='btn btn-danger btn-sm col-2'>Suppr.</a>";
                             echo '</div>';
                             echo '<li class="list-group-item">', $document->Theme, " (theme) </li>";
                             echo '<li class="list-group-item">', $document->AgeMini, " (age minimum) </li>";
@@ -62,6 +62,24 @@
                                     echo '<li class="list-group-item">', $document->Encheres, " (enchère) </li>";
                                 }
                             }
+                        echo "</ul><br>";
+                        echo '</div>';
+                        */
+                        echo '<div class="col-4">';
+                        echo '<ul class="list-group">';
+                        echo '<li class="list-group-item active text-center">', $document->Nom, "<br><br>";
+                        echo '<div >';
+                            echo "<a href='edit.php?id=".$document->_id."' class='btn btn-warning btn-sm col-2'>Editer</a>";
+                            echo "<a style='margin-left:1%; margin-right:1%' href='delete.php?id=".$document->_id."' class='btn btn-danger btn-sm col-2'>Suppr.</a>";
+                        echo '</div>';
+                        echo '<li class="list-group-item"><img style="width:388px;height:200px;padding-right:12px;" src=',$document->Image,"></img></li>";
+                        echo '<li class="list-group-item"> Theme : ', $document->Theme, "</li>";
+                        echo '<li class="list-group-item"> Pegi : ', $document->AgeMini, "</li>";
+                        if(property_exists($document,"Encheres")){
+                             if(isset($document->Encheres)){
+                                echo '<li class="list-group-item"> Prix enchère : ', $document->Encheres, "€</li>";
+                            }
+                        }
                         echo "</ul><br>";
                         echo '</div>';
                     }

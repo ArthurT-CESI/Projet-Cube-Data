@@ -41,9 +41,9 @@
                 echo '<ul class="list-group">';
                     echo '<li class="list-group-item active text-center">', $document->Nom, "<br><br>";
                     echo '<div >';
-                            echo "<a href='/index/annonces/edit.php?id=".$document->_id."' class='btn btn-warning btn-sm col-3'>Editer</a>";
-                            echo "<a style='margin-left:1%; margin-right:1%' href='/index/annonces/delete.php?id=".$document->_id."' class='btn btn-danger btn-sm col-3'>Suppr.</a>";
-                            echo "<a href='/index/annonces/validate.php?id=".$document->_id."' class='btn btn-success btn-sm col-3'>Valider</a>";
+                            echo "<a href='/annonces/edit.php?id=".$document->_id."' class='btn btn-warning btn-sm col-3'>Editer</a>";
+                            echo "<a style='margin-left:1%; margin-right:1%' href='/annonces/delete.php?id=".$document->_id."' class='btn btn-danger btn-sm col-3'>Suppr.</a>";
+                            echo "<a href='/annonces/validate.php?id=".$document->_id."' class='btn btn-success btn-sm col-3'>Valider</a>";
                         echo '</div>';
                         echo '<li class="list-group-item"><img style="width:388px;height:200px;padding-right:12px;" src=',$document->Image,"></img></li>";
                         echo '<li class="list-group-item"> Theme : ', $document->Theme, "</li>";
